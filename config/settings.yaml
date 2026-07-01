@@ -1,0 +1,37 @@
+# trading-rh — agent configuration
+# Edited by humans; read by the Claude Code agent before every backtest or live action.
+
+account:
+  # Live execution ONLY ever targets this account (cash, agentic_allowed=true).
+  number: "821056652"      # nickname "Agentic"
+  type: cash
+
+# ---------------------------------------------------------------------------
+# HARD RULES — the agent must refuse to cross these on its own, always.
+# ---------------------------------------------------------------------------
+guardrails:
+  # Symbols that must NEVER be traded, backtested-for-execution, or added to a
+  # live portfolio — under any circumstance, in any strategy. Enforced before
+  # every order and when ingesting any portfolio file.
+  never_trade:
+    - UBER          # permanent user rule (2026-06-30): never trade Uber.
+
+  total_capital_cap_usd: 2000     # max dollars deployed at once (subject to actual buying power)
+  max_per_position_usd: 500       # ceiling for any single symbol
+  order_type: limit               # limit at/near the ask; never market...
+  allow_fractional_market: false  # ...unless explicitly enabled (fractional needs market orders)
+  session: regular_hours_only     # never extended/overnight
+  reconcile_cadence: daily        # sync live holdings to target once per day after open
+  kill_switch: true               # on data anomaly or large drift, halt + report instead of trading
+
+# ---------------------------------------------------------------------------
+# Backtest defaults
+# ---------------------------------------------------------------------------
+backtest:
+  benchmark: SPY
+  weighting: equal                # equal-dollar across active names
+  rebalance: monthly
+  starting_capital_usd: 10000
+  metrics: [total_return, cagr, max_drawdown, win_rate]
+  # Always disclose survivorship/lookahead bias when the portfolio is a
+  # current snapshot (no historical add/sell dates).
