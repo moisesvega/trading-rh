@@ -19,7 +19,7 @@ guardrails:
   total_capital_cap_usd: 2000     # max dollars deployed at once (subject to actual buying power)
   max_per_position_usd: 500       # ceiling for any single symbol
   order_type: limit               # limit at/near the ask; never market...
-  allow_fractional_market: false  # ...unless explicitly enabled (fractional needs market orders)
+  allow_fractional_market: true   # ENABLED 2026-06-30: fractional shares via market orders (regular hours only)
   session: regular_hours_only     # never extended/overnight
   reconcile_cadence: daily        # sync live holdings to target once per day after open
   kill_switch: true               # on data anomaly or large drift, halt + report instead of trading
