@@ -1,0 +1,49 @@
+symbol,pick_date,reported_return_pct,holding_weight_pct,rating,status
+STRL,2023-08-01,1244.48,10.67,Strong Buy,hold
+POWL,2023-05-15,1471.97,10.65,Hold,hold
+AGX,2024-10-15,572.80,5.03,Hold,hold
+APP,2023-11-15,1114.02,4.61,Buy,hold
+CLS,2023-10-16,1236.26,3.97,Strong Buy,hold
+MU,2025-10-15,505.10,3.65,Strong Buy,hold
+POWL,2024-10-01,281.73,3.60,Hold,hold
+CRDO,2025-02-03,294.47,3.36,Strong Buy,hold
+TWLO,2024-02-01,187.47,3.27,Strong Buy,hold
+CLS,2024-11-15,349.37,3.24,Strong Buy,hold
+EAT,2024-04-01,227.80,2.81,Buy,hold
+MFC,2023-11-01,130.17,2.67,Hold,hold
+BLBD,2024-05-15,49.46,2.45,Buy,hold
+TTMI,2025-10-01,217.04,2.39,Strong Buy,hold
+CAAP,2023-05-01,122.63,2.28,Hold,hold
+STRL,2025-08-01,222.41,2.28,Strong Buy,hold
+OKTA,2024-02-15,52.70,2.12,Strong Buy,hold
+UBER,2023-06-01,92.43,2.06,Hold,hold
+EZPW,2025-04-01,123.61,1.95,Strong Buy,hold
+CVSA,2024-07-15,62.09,1.95,Buy,hold
+SYF,2024-09-03,53.95,1.81,Hold,hold
+BRK.B,2024-07-01,22.62,1.62,Hold,hold
+TMUS,2023-09-15,16.50,1.62,Hold,hold
+ALL,2025-01-02,24.14,1.54,Strong Buy,hold
+CCL,2024-11-01,30.22,1.54,Hold,hold
+SSRM,2025-06-16,119.05,1.54,Hold,hold
+UNFI,2025-05-15,51.48,1.39,Buy,hold
+MFC,2025-05-01,31.40,1.35,Hold,hold
+EAT,2025-04-15,10.69,1.32,Buy,hold
+TIGO,2025-12-15,69.39,0.90,Hold,hold
+KGC,2025-09-02,10.89,0.88,Buy,hold
+CDE,2025-09-15,-1.07,0.80,Hold,hold
+INCY,2025-11-03,15.74,0.74,Strong Buy,hold
+VISN,2025-08-15,-16.96,0.73,Hold,hold
+DY,2026-02-02,32.43,0.69,Strong Buy,hold
+PARR,2025-11-17,22.31,0.68,Strong Buy,hold
+W,2025-12-01,-17.16,0.58,Buy,hold
+CRDO,2026-05-01,51.07,0.57,Strong Buy,hold
+LITE,2026-03-16,32.94,0.56,Strong Buy,hold
+CSTM,2026-04-01,18.34,0.54,Strong Buy,hold
+B,2026-01-02,-15.70,0.49,Buy,hold
+GM,2026-02-17,-4.51,0.49,Strong Buy,hold
+NEM,2026-01-15,-17.99,0.49,Buy,hold
+SNDK,2026-06-01,29.73,0.47,Strong Buy,hold
+FN,2026-03-02,-1.27,0.45,Buy,hold
+NEXA,2026-04-15,-11.30,0.42,Buy,hold
+MXL,2026-05-15,41.05,0.42,Strong Buy,hold
+SNEX,2026-06-15,-12.87,0.35,Strong Buy,hold

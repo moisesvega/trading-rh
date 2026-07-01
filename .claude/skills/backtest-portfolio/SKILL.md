@@ -21,10 +21,18 @@ stdlib Python (deterministic), and every run writes a full report to `backtests/
    (weekly/daily only if a finer drawdown is requested). Batch ≤10 symbols per call.
    Cache the parsed `{start_open, monthly_closes}` to `data/<portfolio>-monthly.json` so
    reruns don't refetch.
-4. **Simulate** (equal-dollar weight):
-   - Entry = first bar's open; exit = last bar's close.
-   - Buy-and-hold path: `V_t = mean_i(price_i,t / start_i)`.
-   - Also report **monthly-rebalanced** when comparing (compounds mean monthly returns).
+4. **Simulate:**
+   - **Weighting matters more than anything.** If the CSV has a `holding_weight_pct` column
+     (a real portfolio like Alpha Picks), weight by it — do NOT equal-weight. Equal weight
+     over-counts tiny recent moonshots (e.g. a 0.5% position up +800%) and produces nonsense.
+   - **For a YTD/period return, use BEGINNING-of-period weights**, not current weights.
+     Current holding % already contains this period's gains, so weighting the period's returns
+     by current weights double-counts winners (seen: +82% vs the correct +46%). Recover a
+     start weight as `current_w / (1 + period_return)`. For positions **added mid-period**,
+     use their since-add return, not a full-period return.
+   - Entry = first bar's open; exit = last bar's close (or today's quote for "to today").
+   - Equal-weight buy-and-hold path: `V_t = mean_i(price_i,t / start_i)`; report
+     monthly-rebalanced too when comparing.
 5. **Metrics:** total return, CAGR, max drawdown (over the value path), win rate. Benchmark
    the same window for SPY.
 6. **SPY self-check.** Backtested SPY total return must match SPY's actual start→end move.
