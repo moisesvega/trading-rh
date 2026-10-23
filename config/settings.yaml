@@ -35,3 +35,18 @@ backtest:
   metrics: [total_return, cagr, max_drawdown, win_rate]
   # Always disclose survivorship/lookahead bias when the portfolio is a
   # current snapshot (no historical add/sell dates).
+
+# ---------------------------------------------------------------------------
+# Paper strategy: post-earnings drift. PAPER ONLY — never places real orders.
+# ---------------------------------------------------------------------------
+paper_earnings_drift:
+  started: 2026-10-14               # forward-only; no entries dated before this
+  universe: high_market_cap         # get_earnings_calendar filter
+  min_gap_pct: 4                    # day-1 close vs pre-report close
+  require_eps_beat: true
+  require_hold_gap: true            # day-1 close >= day-1 open
+  position_usd: 100                 # paper notional per trade
+  max_open: 8
+  stop_loss_pct: -8                 # vs entry close
+  hold_trading_days: 20
+  review_after: 2026-11-25          # decide go/no-go vs SPY and Alpha Picks

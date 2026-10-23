@@ -1,0 +1,12 @@
+[tasks.paper-earnings]
+description = "Daily paper run of the earnings-drift strategy (read-only Robinhood tools, no order tools allowed)"
+run = '''
+mkdir -p logs
+claude -p "Run the paper-earnings-drift skill for today." \
+  --permission-mode acceptEdits \
+  --allowedTools "mcp__robinhood-trading__get_earnings_calendar mcp__robinhood-trading__get_earnings_results mcp__robinhood-trading__get_equity_historicals mcp__robinhood-trading__get_equity_quotes Read Edit Write Bash(jq:*) Bash(date:*)" \
+  >> "logs/paper-earnings-$(date +%F).log" 2>&1
+git add journal paper
+git diff --cached --quiet || git commit -q -m "data: paper earnings-drift run $(date +%F)"
+git push -q origin main
+'''
